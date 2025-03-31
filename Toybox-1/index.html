@@ -1,5 +1,3 @@
-// "Toybox 1" Game — Part of a unified drag-and-drop game
-// This is 1 of 4 connected files (HTML / CSS / game.js / script.js)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,31 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Water Cycle Toybox</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="../playerState.js"></script> <!-- ✅ Added for XP tracking -->
+  <script src="../playerState.js"></script> <!-- ✅ XP tracking -->
 </head>
 <body>
   <div id="top-left-controls">
     <button onclick="goToMap()">🗺️ Progress Map</button>
     <button onclick="saveAndExit()">💾 Save & Exit</button>
   </div>
-  
+
   <h1>🌞 Water Cycle Toybox 🌧️</h1>
   <p>Drag the correct pieces into the scene to complete the water cycle.</p>
 
-  <div id="game-container">
-    <div id="game-area">
-      <!-- Fixed Elements -->
-      <img src="assets/water-cycle/sun.png" class="fixed sun" />
-      <img src="assets/water-cycle/cloud.png" class="fixed cloud cloud1" />
-      <img src="assets/water-cycle/cloud.png" class="fixed cloud cloud2" />
-      <img src="assets/water-cycle/lake.png" class="fixed lake lake1" />
-      <img src="assets/water-cycle/lake.png" class="fixed lake lake2" />
-    </div>
+  <div class="scale-wrapper">
+    <div id="game-container">
+      <div id="game-area">
+        <!-- Fixed Elements -->
+        <img src="assets/water-cycle/sun.png" class="fixed sun" />
+        <img src="assets/water-cycle/cloud.png" class="fixed cloud cloud1" />
+        <img src="assets/water-cycle/cloud.png" class="fixed cloud cloud2" />
+        <img src="assets/water-cycle/lake.png" class="fixed lake lake1" />
+        <img src="assets/water-cycle/lake.png" class="fixed lake lake2" />
+      </div>
 
-    <div id="toolbox">
-      <p>Toolbox:</p>
-      <img id="evaporation" src="assets/water-cycle/evaporation.png" class="draggable" draggable="true" title="Evaporation" />
-      <img id="raindrops" src="assets/water-cycle/raindrops.png" class="draggable" draggable="true" title="Raindrops" />
+      <div id="toolbox">
+        <p>Toolbox:</p>
+        <img id="evaporation" src="assets/water-cycle/evaporation.png" class="draggable" draggable="true" title="Evaporation" />
+        <img id="raindrops" src="assets/water-cycle/raindrops.png" class="draggable" draggable="true" title="Raindrops" />
+      </div>
     </div>
   </div>
 
@@ -46,6 +46,5 @@
 
   <script src="config.js"></script>
   <script src="game.js?v=2"></script>
-  
 </body>
 </html>
