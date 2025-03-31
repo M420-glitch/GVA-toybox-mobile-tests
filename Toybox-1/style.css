@@ -1,4 +1,58 @@
-/* Desktop Styles (Default) */
+/* Mobile-specific tweaks */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  #game-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  #game-area {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+  }
+
+  #toolbox {
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    border-left: none;
+    border-top: 2px solid #444;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  #toolbox img {
+    width: 60px;
+    margin: 5px;
+  }
+
+  #xp-counter {
+    top: 5px;
+    right: 10px;
+    font-size: 16px;
+    padding: 3px 8px;
+  }
+
+  #top-left-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    gap: 5px;
+    z-index: 999;
+  }
+
+  #top-left-controls button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
 body {
   background: #f0f0f0;
   font-family: monospace;
@@ -31,6 +85,21 @@ h1 {
   overflow: hidden;
 }
 
+.fixed {
+  position: absolute;
+  pointer-events: none;
+}
+
+.sun, .cloud1, .cloud2, .lake1, .lake2 {
+  position: absolute;
+}
+
+.sun { top: 20px; left: 250px; width: 100px; }
+.cloud1 { top: 130px; left: 120px; width: 100px; }
+.cloud2 { top: 130px; left: 360px; width: 100px; }
+.lake1 { bottom: 30px; left: 100px; width: 140px; }
+.lake2 { bottom: 30px; left: 360px; width: 140px; }
+
 #toolbox {
   position: absolute;
   top: 100px;
@@ -49,41 +118,6 @@ h1 {
   margin: 10px 0;
   cursor: grab;
   width: 80px;
-}
-
-.fixed {
-  position: absolute;
-  pointer-events: none;
-}
-
-.sun {
-  top: 20px;
-  left: 250px;
-  width: 100px;
-}
-
-.cloud1 {
-  top: 130px;
-  left: 120px;
-  width: 100px;
-}
-
-.cloud2 {
-  top: 130px;
-  left: 360px;
-  width: 100px;
-}
-
-.lake1 {
-  bottom: 30px;
-  left: 100px;
-  width: 140px;
-}
-
-.lake2 {
-  bottom: 30px;
-  left: 360px;
-  width: 140px;
 }
 
 #game-area.complete {
@@ -132,7 +166,7 @@ h1 {
 }
 
 #top-left-controls {
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 20px;
   display: flex;
@@ -155,40 +189,4 @@ h1 {
 #top-left-controls button:hover {
   background: #f8f8b8;
   color: #111;
-}
-
-/* Mobile Scaling Fix */
-.scale-wrapper {
-  transform-origin: top left;
-}
-
-@media (max-width: 768px) {
-  .scale-wrapper {
-    transform: scale(0.75);
-    width: 100%;
-    overflow: hidden;
-  }
-
-  body {
-    overflow-x: hidden;
-    font-size: 14px;
-  }
-
-  #xp-counter {
-    top: 5px;
-    right: 10px;
-    font-size: 16px;
-    padding: 3px 8px;
-  }
-
-  #top-left-controls {
-    top: 10px;
-    left: 10px;
-    gap: 5px;
-  }
-
-  #top-left-controls button {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
 }
