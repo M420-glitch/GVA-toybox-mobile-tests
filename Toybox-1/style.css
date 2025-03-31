@@ -1,58 +1,3 @@
-/* Mobile-specific tweaks */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-
-  #game-container {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 10px;
-  }
-
-  #game-area {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-  }
-
-  #toolbox {
-    position: relative;
-    flex-direction: row;
-    justify-content: center;
-    border-left: none;
-    border-top: 2px solid #444;
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-
-  #toolbox img {
-    width: 60px;
-    margin: 5px;
-  }
-
-  #xp-counter {
-    top: 5px;
-    right: 10px;
-    font-size: 16px;
-    padding: 3px 8px;
-  }
-
-  #top-left-controls {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    gap: 5px;
-    z-index: 999;
-  }
-
-  #top-left-controls button {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-}
-
 body {
   background: #f0f0f0;
   font-family: monospace;
@@ -74,6 +19,7 @@ h1 {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  flex-wrap: wrap;
 }
 
 #game-area {
@@ -83,15 +29,12 @@ h1 {
   background: #d6faff;
   border: 2px dashed #555;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .fixed {
   position: absolute;
   pointer-events: none;
-}
-
-.sun, .cloud1, .cloud2, .lake1, .lake2 {
-  position: absolute;
 }
 
 .sun { top: 20px; left: 250px; width: 100px; }
@@ -101,9 +44,6 @@ h1 {
 .lake2 { bottom: 30px; left: 360px; width: 140px; }
 
 #toolbox {
-  position: absolute;
-  top: 100px;
-  right: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,13 +51,13 @@ h1 {
   background: #e0f7fa;
   border-left: 2px solid #444;
   min-width: 140px;
-  z-index: 10;
 }
 
 #toolbox img {
   margin: 10px 0;
   cursor: grab;
   width: 80px;
+  height: auto;
 }
 
 #game-area.complete {
@@ -189,4 +129,38 @@ h1 {
 #top-left-controls button:hover {
   background: #f8f8b8;
   color: #111;
+}
+
+/* ✅ Responsive Layout */
+@media (max-width: 768px) {
+  #game-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #game-area {
+    width: 95vw;
+    height: auto;
+  }
+
+  #toolbox {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5px;
+    border-left: none;
+    border-top: 2px solid #444;
+  }
+
+  #toolbox img {
+    width: 60px;
+    margin: 5px;
+  }
+
+  #top-left-controls {
+    position: static;
+    margin-bottom: 10px;
+  }
 }
