@@ -1,3 +1,32 @@
+// "Toybox 1" Game — Part of a unified drag-and-drop game
+// This is 1 of 4 connected files (HTML / CSS / game.js / script.js)
+// Do not break existing desktop layout — goal is to make this mobile-friendly
+
+// Adjust layout for mobile responsiveness
+function adjustLayout() {
+  const toolbox = document.getElementById('toolbox');
+  const gameArea = document.getElementById('game-area');
+
+  if (window.innerWidth <= 768) {
+    // Mobile layout adjustments
+    toolbox.style.flexDirection = 'row';
+    toolbox.style.overflowX = 'scroll';
+    toolbox.style.overflowY = 'hidden';
+    gameArea.style.marginTop = '20px';
+  } else {
+    // Revert to desktop layout
+    toolbox.style.flexDirection = 'column';
+    toolbox.style.overflow = 'visible';
+    gameArea.style.marginTop = '0';
+  }
+}
+
+// Listen for window resize to adjust layout dynamically
+window.addEventListener('resize', adjustLayout);
+
+// Initial layout adjustment on page load
+adjustLayout();
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Sortable for the toolbox
   const toolbox = document.getElementById('toolbox');

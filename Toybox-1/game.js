@@ -1,3 +1,7 @@
+// "Toybox 1" Game — Part of a unified drag-and-drop game
+// This is 1 of 4 connected files (HTML / CSS / game.js / script.js)
+// Add responsiveness for mobile layout
+
 let dragged = null;
 let taskComplete = false;
 
